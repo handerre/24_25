@@ -42,8 +42,7 @@ h1, h2 {
 
 }
 /* Liste-stiler */
-ul {s
-    list-style-type: square;
+ul {list-style-type: square;
     padding-left: 20px;
 }
 
