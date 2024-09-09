@@ -1,47 +1,50 @@
-
-
 <!DOCTYPE html>
-<html>
+<html lang="no">
 <head>
-    <title>My Web Page</title>
-    <link rel="stylesheet" href="Stilark.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout med Lister</title>
+    <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
-  
-  <div class="Bent">
-  <div class="grid-item">1  </div>
-  <div class="grid-item"> 
-    <img src="Bilder/LitenROS.png" alt="ROS-Analyse">
-  
-  </div>
-  <div class="grid-item"><p>Example of unordered lists:</p>
-<ul class="a">
-  <li>Coffee</li>
-  <li>Tea</li>
-  <li>Coca Cola</li>
-</ul>
 
-<ul class="b">
-  <li>Coffee</li>
-  <li>Tea</li>
-  <li>Coca Cola</li>
-</ul></div>  
-  <div class="grid-item">Test på nett</div>
-  <div class="grid-item"><p>Example of ordered lists:</p>
-<ol class="c">
-  <li>Coffee</li>
-  <li>Tea</li>
-  <li>Coca Cola</li>
-</ol>
+    <header>
+        <h1>Eksempel på Grid Layout, lister og @media</h1>
+    </header>
 
-<ol class="d">
-  <li>Coffee</li>
-  <li>Tea</li>
-  <li>Coca Cola</li>
-</ol></div>
-  <div class="grid-item"><a href="Underside.html">Underside</a></div>  
-  <div class="grid-item">7</div>
-  <div class="grid-item">8</div>
-</div>
+    <main class="grid-container">
+        <!-- Seksjon 1: En uordnet liste -->
+        <section class="section1">
+            <h2>Uordnet Liste</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com/">Visit W3Schools.com!</a></li>
+                <li><a href="HTML/Underside.html">En underside</a></li>
+                <li>Element 3</li>
+            </ul>
+        </section>
+
+        <!-- Seksjon 2: En ordnet liste -->
+        <section class="section2">
+            <h2>Ordet Liste</h2>
+            <ol>
+                <li>Første element</li>
+                <li>Andre element</li>
+                <li>Tredje element</li>
+            </ol>
+        </section>
+
+        <!-- Seksjon 3: Ekstra innhold -->
+        <section class="section3">
+            <h2>Ekstra Seksjon</h2>
+            <p>Dette er en tredje seksjon med noe tekstinnhold for å fylle opp grid-layouten.</p>
+        </section>
+
+        <section class="section4">
+            <h2>Ny grid på ny "linje" som strekker seg fra venstres til høyre over hele skjermen</h2>
+            <p>Dette er en fjerde seksjon med noe mer tekstinnhold.</p>
+            <img src="Bilder/LitenROS.jpg" alt ="ROS-ANALYSE">
+        </section>
+    </main>
+
 </body>
 </html>
