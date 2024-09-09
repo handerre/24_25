@@ -1,0 +1,42 @@
+/* Generelle stilregler for å fjerne margin og padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Flexbox container */
+.container {
+    display: flex;
+    justify-content: space-between; /* Fordeler elementene med jevn avstand */
+    padding: 20px;
+}
+
+/* Styling for hver flexbox item */
+.box {
+    background-color: #4CAF50;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 8px;
+    flex: 1; /* Gjør at hver boks tar like mye plass */
+    margin: 0 10px; /* Avstand mellom boksene */
+}
+
+.box1 {
+    background-color: #FF5733;
+}
+
+.box2 {
+    background-color: #33B5E5;
+}
+
+.box3 {
+    background-color: #FFC107;
+}
