@@ -51,9 +51,14 @@ ol {
     padding-left: 20px;
 }
 
-/* Responsiv design */
-@media (max-width: 768px) {
+/* Responsiv design - gjemmer elementet når siden er større enn 768px*/
+
+
+@media screen and (max-width: 390px)  {
+    body {
+      background-color: lightgreen;
+    }
     .grid-container {
         grid-template-columns: 1fr;
     }
-}
+  }
