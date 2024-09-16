@@ -58,3 +58,24 @@ ol {
     }
 }
 
+/* unvisited link */
+a:link {
+    color: rgb(144, 115, 176);
+  }
+  
+  /* visited link */
+  a:visited {
+    color: rgb(19, 170, 19);
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: rgba(134, 8, 245, 0.623);
+    font-size: xx-large;
+  }
+  
+  /* selected link */
+  a:active {
+    color: rgb(179, 100, 27);
+  }
+
