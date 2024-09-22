@@ -25,14 +25,21 @@ h1, h2 {
     gap: 20px;
     padding: 20px;
     
-      
 }
 
-.section1, .section2, .section3 {
+.section1, .section3 {
     background-color: white;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(252, 249, 249, 0.1);
+}
+
+.section2 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(252, 249, 249, 0.1);
+    text-align: center;
 }
 .section4 {
     background-color: white;
@@ -81,5 +88,4 @@ a:link {
   a:active {
     color: rgb(179, 100, 27);
   }
-
 
