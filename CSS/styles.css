@@ -24,6 +24,8 @@ h1, h2 {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px;
+    
+      
 }
 
 .section1, .section2, .section3 {
@@ -39,6 +41,7 @@ h1, h2 {
     box-shadow: 0 2px 5px rgba(252, 249, 249, 0.1);
     grid-column: span 3;
     text-align: center;
+    flex-grow: 1;
 }
 /* Liste-stiler */
 ul {list-style-type: square;
@@ -78,4 +81,5 @@ a:link {
   a:active {
     color: rgb(179, 100, 27);
   }
+
 
