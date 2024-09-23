@@ -40,6 +40,7 @@ h1, h2 {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(252, 249, 249, 0.1);
     text-align: center;
+    
 }
 .section4 {
     background-color: white;
@@ -87,5 +88,10 @@ a:link {
   /* selected link */
   a:active {
     color: rgb(179, 100, 27);
-  }
-
+  } 
+  
+/* Bildestørrelse dynamisk*/
+  img {
+max-width: 100%;
+height: auto;
+}
