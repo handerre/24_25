@@ -47,9 +47,12 @@ h1, h2 {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(252, 249, 249, 0.1);
-    grid-column: span 3;
     text-align: center;
-    flex-grow: 1;
+   width: 300%;
+  
+
+
+    
 }
 /* Liste-stiler */
 ul {list-style-type: square;
