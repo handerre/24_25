@@ -86,6 +86,9 @@ a:link {
   a:hover {
     color: rgba(134, 8, 245, 0.623);
     font-size: xx-large;
+      border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(252, 249, 249, 0.1);
+    background-color: #249928;
   }
   
   /* selected link */
