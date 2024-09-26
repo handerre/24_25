@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background-color: #249928;
+    background-color: #c7c1e6;
     color: white;
     text-align: center;
     padding: 1em 0;
@@ -86,11 +86,11 @@ a:link {
   a:hover {
     color: rgba(134, 8, 245, 0.623);
     font-size: xx-large;
-      border-radius: 5px;
+      border-radius: 25px;
     box-shadow: 0 2px 5px rgba(252, 249, 249, 0.1);
-    background-color: #249928;
+    background-color: #164118;
   }
-  
+
   /* selected link */
   a:active {
     color: rgb(179, 100, 27);
