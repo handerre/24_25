@@ -4,12 +4,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #afafbd;
+    background-color: #757c51;
     color: #333;
 }
 
 header {
-    background-color: #c7c1e6;
+    background-color: #6e64a4;
     color: white;
     text-align: center;
     padding: 1em 0;
@@ -84,11 +84,11 @@ a:link {
   
   /* mouse over link */
   a:hover {
-    color: rgba(134, 8, 245, 0.623);
+    color: rgba(134, 46, 212, 0.623);
     font-size: xx-large;
       border-radius: 25px;
     box-shadow: 0 2px 5px rgba(252, 249, 249, 0.1);
-    background-color: #164118;
+    background-color: #c2f5c5;
   }
 
   /* selected link */
