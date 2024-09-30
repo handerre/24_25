@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greven av Bakke</title>
+    <link rel="stylesheet" href="../CSS/prompt.css">
+</head>
+<body>
+    <!-- Header med navn og påloggingsknapp -->
+    <header>
+        <h1>Greven av Bakke</h1>
+        <button id="login-btn">Logg inn</button>
+    </header>
+
+    <!-- Grid layout delt i tre horisontale deler -->
+    <div class="container">
+        <!-- Grid 1: Dropdown-menyen -->
+        <div class="grid grid-1">
+            <nav>
+                <select id="dropdown-menu">
+                    <option value="home">Hjem</option>
+                    <option value="info">Informasjon</option>
+                    <option value="games">Spill</option>
+                    <option value="gallery">Galleri</option>
+                    <option value="contact">Kontakt</option>
+                </select>
+            </nav>
+        </div>
+
+        <!-- Grid 2: Bildegalleriet -->
+        <div class="grid grid-2">
+            <h2>Bildegalleri</h2>
+            <!-- Bilder som skal forstørres ved klikk -->
+            <img src="image1.jpg" class="gallery-img" alt="Bilde 1">
+            <img src="image2.jpg" class="gallery-img" alt="Bilde 2">
+            <!-- Flere bilder her... -->
+        </div>
+
+        <!-- Grid 3: Tekst om deg selv -->
+        <div class="grid grid-3">
+            <h2>Om meg</h2>
+            <p>Jeg er en mann i min beste alder. Har flaks i kjærlighet og stort sett uflaks i spill.</p>
+        </div>
+    </div>
+
+    <!-- Footer med dagens dato og nedtelling -->
+    <footer>
+        <p id="current-date"></p>
+        <p id="countdown-timer"></p>
+    </footer>
+
+    <!-- Lenker til JavaScript-filer -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+/* Reset default styling */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Bakgrunnsfarge og tilpasning */
+body {
+    background: url('blue-sky.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+#login-btn {
+    background-color: #888;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Grid layout */
+.container {
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    gap: 10px;
+    padding: 10px;
+}
+
+.grid {
+    background-color: olive;
+    padding: 20px;
+    border-radius: 10px; /* Runde hjørner for tilpasning til UU */
+}
+
+/* Dropdown-meny styling */
+nav select {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Bildegalleri */
+.gallery-img {
+    width: 100%;
+    transition: transform 0.3s ease; /* Overgangseffekt for forstørring */
+}
+
+.gallery-img:hover {
+    transform: scale(2); /* Forstørrelse ved hover */
+}
+
+/* Footer styling */
+footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsivt design for mobile enheter */
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Enkelt kolonne for mobilvisning */
+    }
+}
