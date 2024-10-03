@@ -15,7 +15,7 @@ function updateCountdown() {
     targetDates.forEach(date => {
         const diff = date - now;
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        countdownString += `Nedtelling til ${date.toLocaleDateString()}: ${days} dager igjen. `;
+        countdownString += `Det er  ${days} dager igjen til ${date.toLocaleDateString()}: `;
     });
 
     countdownTimer.innerText = countdownString;

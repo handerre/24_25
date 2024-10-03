@@ -1,0 +1,23 @@
+
+
+  /* Definerer stilen for dropdown-beholderen */
+  .dropdown {
+    position: relative; /* Plasserer elementet relativt til sin normale posisjon */
+    display: inline-block; /* Gjør at dropdownen vises inline, men kan fortsatt ha bredde/høyde */
+  }
+
+  /* Definerer stilen for innholdet i dropdown-menyen */
+  .dropdown-content {
+    display: none; /* Skjuler dropdown-innholdet som standard */
+    position: absolute; /* Plasserer innholdet absolutt i forhold til dropdown-beholderen */
+    background-color: #f8f9f9; /* Setter bakgrunnsfarge på dropdown-innholdet */
+    min-width: 159px; /* Minimum bredde på dropdown-innholdet */
+    box-shadow: -1px 8px 16px 0px rgba(0,0,0,0.2); /* Legger til en skyggeeffekt rundt innholdet */
+    padding: 11px 16px; /* Legger til innvendig marg (padding) for innholdet */
+    z-index: 0; /* Sørger for at dropdown-innholdet vises over andre elementer */
+  }
+
+  /* Endrer visningen av dropdown-innholdet når musen beveger seg over .dropdown */
+  .dropdown:hover .dropdown-content {
+    display: block; /* Viser dropdown-innholdet når musen er over dropdown-beholderen */
+  }
