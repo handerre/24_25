@@ -4,8 +4,7 @@ document.getElementById('current-date').innerText = new Date().toLocaleDateStrin
 // Nedtelling til Julaften og St.Hans
 const countdownTimer = document.getElementById('countdown-timer');
 const targetDates = [
-    new Date('2024-12-24'), // Julaften
-    new Date('2025-06-24')  // St.Hans
+    new Date('2024-12-24'), new Date('2025-06-24')  // Julaften og St.Hans
 ];
 
 function updateCountdown() {

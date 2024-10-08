@@ -18,7 +18,9 @@ header {
     color: #fff;
     padding: 10px;
     text-align: center;
-    margin: 5px;
+    margin: 10px;
+    border-radius: 15px; /* Runde hjørner for tilpasning til UU */
+    opacity: 0.8;
 }
 
 #login-btn {
@@ -27,13 +29,14 @@ header {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    border-radius: 15px; /* Runde hjørner for tilpasning til UU */
 }
 
 /* Grid layout */
 .container {
     display: grid;
-    grid-template-columns: 20% 40% 40%;
-   gap: 10px;
+    grid-template-columns: 20% 40% 37%;
+    gap: 15px;
    
     margin: 10px;
 }
@@ -41,7 +44,8 @@ header {
 .grid {
     background-color: olive;
     padding: 20px;
-    border-radius: 10px; /* Runde hjørner for tilpasning til UU */
+    border-radius: 15px; /* Runde hjørner for tilpasning til UU */
+    opacity: 0.9;
 }
 
 /* Dropdown-meny styling */
@@ -52,8 +56,13 @@ nav select {
 
 /* Bildegalleri */
 .gallery-img {
-    width: 100%;
+    width: 40%;
     transition: transform 0.3s ease; /* Overgangseffekt for forstørring */
+}
+
+.grid-2
+{
+    text-align: center;
 }
 
 .gallery-img:hover {
