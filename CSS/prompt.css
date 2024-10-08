@@ -9,7 +9,7 @@ body, h1, h2, p {
 body {
     background: url('../Bilder/clouds.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: #333;
+    
 }
 
 /* Header styling */
@@ -20,7 +20,7 @@ header {
     text-align: center;
     margin: 10px;
     border-radius: 15px; /* Runde hjørner for tilpasning til UU */
-    opacity: 0.8;
+    opacity: 0.8; /* gjennomsiktighet*/
 }
 
 #login-btn {
@@ -35,9 +35,8 @@ header {
 /* Grid layout */
 .container {
     display: grid;
-    grid-template-columns: 20% 40% 37%;
+    grid-template-columns: 15% 41% 41%;
     gap: 15px;
-   
     margin: 10px;
 }
 
@@ -46,11 +45,13 @@ header {
     padding: 20px;
     border-radius: 15px; /* Runde hjørner for tilpasning til UU */
     opacity: 0.9;
+    margin-top: 40px;
+    color: #fff;
 }
 
 /* Dropdown-meny styling */
 nav select {
-    width: 100%;
+    width: 50%;
     padding: 10px;
 }
 
