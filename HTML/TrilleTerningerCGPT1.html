@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trille Terninger</title>
+    <link rel="stylesheet" href="../CSS/Terning.css"><link rel="stylesheet" href="../CSS/styles.css">ssda
+    <!-- Inkluder Chart.js biblioteket -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    
+    <h1>Trill Terninger</h1>
+
+    <!-- Velg antall terninger -->
+    <label for="antallTerninger">Velg antall terninger:</label>
+    <select id="antallTerninger">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+    </select>
+
+    <p>Total poengsum (forrige kast): <span id="totalSum">-</span></p>
+    <p>Samlet poengsum: <span id="samletSum">0</span></p>
+    <p>Runder spilt: <span id="rundeTeller">0</span></p>
+    <p id="spillResultat"></p>
+
+    <button onclick="trillTerninger()">Trill Terningene</button>
+    <button onclick="resetSpillet()">Reset</button>
+
+    <h2>Kastehistorikk</h2>
+    <ul id="historikkListe"></ul>
+<section class="section1">
+    <div class="stats">
+        <h3>Statistikk</h3>
+        <p>Gjennomsnittlig poengsum per runde: <span id="gjennomsnittSum">0</span></p>
+        <p>Høyeste runde poengsum: <span id="hoyesteSum">-</span></p>
+        <p>Laveste runde poengsum: <span id="lavesteSum">-</span></p>
+        <p>Antall seksertrillinger: <span id="sekserTeller">0</span></p>
+    </div>
+
+    <!-- Legg til en canvas for grafen -->
+    <canvas id="terningGraf" width="200px" height="100px"></canvas>
+</section>
+    <script src="../JS/Terning.js"></script>
+    </body>
+</html>
