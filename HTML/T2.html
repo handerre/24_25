@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout Eksempel</title>
+    <style>
+        /* Main */
+        body {
+            font-family: monospace;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Grids */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(9, 100px);
+            grid-template-rows: repeat(100, 10px);
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 300px auto auto auto 300px;
+            grid-template-rows: 500px;
+        }
+
+        /* General styles for sections */
+        .section-title, .section-image, .section-para {
+            grid-column: 1 / span 10;
+        }
+
+        .section-title {
+            grid-row: 10;
+        }
+
+        .section-image {
+            grid-row: 1;
+        }
+
+        .section-para {
+            grid-column: 4 / span 7;
+            grid-row: 20;
+        }
+
+        /* Text Styles */
+        .background-text {
+            position: fixed;
+            margin: 0;
+            padding: 0;
+            left: 0;
+            top: 0;
+        }
+
+        .image-text {
+            text-align: center;
+            margin-left: 150px;
+            margin-right: auto;
+        }
+
+        .logo-text {
+            z-index: 5;
+        }
+
+        .logo-text a {
+            position: fixed;
+        }
+
+        .title-text {
+            font-size: 50px;
+            font-weight: bold;
+            z-index: 2;
+            text-align: center;
+            width: 100%;
+            border-style: dashed;
+        }
+
+        .para-text {
+            font-size: 40px;
+            color: #000000;
+            z-index: 2;
+            width: 80%;
+            text-align: center;
+            border-style: dashed;
+        }
+
+        /* Navigation */
+        .topnav {
+            height: 80px;
+            width: 100%;
+            position: fixed;
+            z-index: 4;
+            top: 0;
+            left: 0;
+            background-color: rgb(51, 0, 255);
+            overflow-x: hidden;
+            padding-top: 20px;
+            opacity: 80%;
+        }
+
+        .topnav a {
+            padding: 25px 1px 6px 20px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #ffffff;
+            display: block;
+            text-shadow: 2px 2px 1px rgb(0, 0, 0);
+        }
+
+        .topnav a:hover {
+            color: rgb(52, 52, 52);
+        }
+
+        /* Page Classes */
+        .page {
+            width: 100%;
+            height: 2000vh;
+            background-color: rgb(255, 255, 255);
+            z-index: 1;
+            display: block;
+            position: relative;
+            margin-top: 100px;
+            margin-left: 0;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="topnav">
+        <a href="#">Hjem</a>
+        <a href="#">Om</a>
+        <a href="#">Tjenester</a>
+        <a href="#">Kontakt</a>
+    </div>
+
+    <!-- Main Page Content -->
+    <div class="page">
+        <div class="grid-container">
+            
+            <!-- Section 1 -->
+            <div class="section-title title-text">Tittel 1</div>
+            <div class="section-image"><img src="image1.jpg" alt="Image 1" style="width:100%;"></div>
+            <div class="section-para para-text">Dette er paragrafen for seksjon 1.</div>
+
+            <!-- Section 2 -->
+            <div class="section-title title-text">Tittel 2</div>
+            <div class="section-image"><img src="image2.jpg" alt="Image 2" style="width:100%;"></div>
+            <div class="section-para para-text">Dette er paragrafen for seksjon 2.</div>
+
+            <!-- Section 3 -->
+            <div class="section-title title-text">Tittel 3</div>
+            <div class="section-image"><img src="image3.jpg" alt="Image 3" style="width:100%;"></div>
+            <div class="section-para para-text">Dette er paragrafen for seksjon 3.</div>
+
+        </div>
+    </div>
+
+</body>
+</html>
+
