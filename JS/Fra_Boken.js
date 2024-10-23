@@ -12,7 +12,7 @@ function myFunction() {
   if (person == null || person == "") {
     text = "Bruker kanselerte prompt.";
   } else {
-    text = "Hei " + person + " ! Hvordan har du det i dag?";
+    text = "Hei !" + person + " ! Hvordan har du det i dag?";
   }
   document.getElementById("demo").innerHTML = text;
 }
