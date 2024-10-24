@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gjettespill</title>
+</head>
+<body>
+    <h1>Gjett et tall mellom 0 og 100</h1>
+    <p>Du har 10 forsøk på å gjette riktig!</p>
+
+    <!-- Input-felt hvor brukeren kan skrive inn et tall -->
+    <input type="text" id="userGuess" placeholder="Skriv inn tallet ditt">
+    <!-- Knapp som kaller guessNumber-funksjonen når den klikkes -->
+    <button onclick="guessNumber()">Gjett</button>
+    <!-- Knapp for å tømme input-feltet -->
+    <button onclick="clearInput()">Tøm</button>
+
+    <!-- P-elementer som viser resultater til brukeren -->
+    <p id="resultMessage"></p>
+    <p id="attemptsRemaining"></p>
+    <p id="errorMessage" style="color:red;"></p> <!-- Feilmelding for ugyldig input -->
+
+    <script src="../JS/gjetting.js"></script>
+  
+    
+</body>
+</html>
+
