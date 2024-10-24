@@ -23,7 +23,7 @@ function myFunction2() {
   let brusPerGjest = Number(prompt("Antall pr. gjest:", ""));
   let antallBrus = (antallBarn + antallVoksne) * brusPerGjest;
 
-  document.getElementById("demo2").innerHTML = text;
+  document.getElementById("demo2").innerHTML = number;
 
   /*Hent tabellen
   let table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
