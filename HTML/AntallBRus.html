@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabell Eksempel</title>
+</head>
+<body>
+
+  <!-- Tabellen der dataene skal legges inn -->
+  <table id="myTable" border="1">
+    <thead>
+      <tr>
+        <th>Antall barn</th>
+        <th>Antall voksne</th>
+        <th>Antall brus per gjest</th>
+        <th>Antall brus totalt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Nye rader blir lagt til her -->
+    </tbody>
+  </table>
+
+  <!-- En knapp for å trigge funksjonen -->
+  <button onclick="myFunction2()">Legg til verdier</button>
+
+  <script>
+    function myFunction2() {
+      let antallBarn = Number(prompt("Antall barn:", ""));
+      let antallVoksne = Number(prompt("Antall voksne:", ""));
+      let brusPerGjest = Number(prompt("Antall pr. gjest:", ""));
+      let antallBrus = (antallBarn + antallVoksne) * brusPerGjest;
+
+      // Sjekk om brukeren har skrevet gyldige verdier (ikke NaN)
+      if (isNaN(antallBarn) || isNaN(antallVoksne) || isNaN(brusPerGjest)) {
+        alert("Vennligst skriv inn gyldige tall!");
+        return;
+      }
+
+      // Hent tabellen
+      let table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+
+      // Opprett en ny rad
+      let newRow = table.insertRow();
+
+      // Opprett celler og fyll dem med verdier
+      let cell1 = newRow.insertCell(0);
+      let cell2 = newRow.insertCell(1);
+      let cell3 = newRow.insertCell(2);
+      let cell4 = newRow.insertCell(3);
+
+      cell1.innerHTML = antallBarn;
+      cell2.innerHTML = antallVoksne;
+      cell3.innerHTML = brusPerGjest;
+      cell4.innerHTML = antallBrus;
+    }
+  </script>
+
+</body>
+</html>

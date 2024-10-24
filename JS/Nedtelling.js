@@ -1,5 +1,5 @@
 // Legger til dagens dato i footeren
-document.getElementById('current-date').innerText = new Date().toLocaleDateString();
+document.getElementById('current-date').innerText = "Dagens dato er " + new Date().toLocaleDateString();
 
 // Nedtelling til Julaften og St.Hans
 const countdownTimer = document.getElementById('countdown-timer');
