@@ -4,6 +4,10 @@
   // Sett antall forsøk brukeren har (10 forsøk)
   let attempts = 10;
 
+  // Henter ut knappen, og legger til en lyttefunksjon på denne
+  let btn_guessNumber = document.querySelector("#btn_guessNumber");
+  btn_guessNumber.addEventListener("click", guessNumber);
+
   // Funksjon som kjører når brukeren trykker på "Gjett"-knappen
   function guessNumber() {
       // Hent brukerens gjetning fra input-feltet (bruker .value for å få verdien)
