@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM-eksempel</title>
+</head>
+<body>
+  <h1 id="overskrift">Hei, verden!</h1>
+  <button id="knapp">Endre tekst</button>
+
+  <script>
+    // Finner knappen og legger til en event listener
+    document.getElementById("knapp").addEventListener("click", function() {
+      // Endrer innholdet i overskriften når knappen trykkes
+      document.getElementById("overskrift").innerText = "Teksten har blitt endret!";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BildeShow</title>
+</head>
+<body>
+  <h1>BildeShow</h1>
+  <img id="bildeshow" src="../Bilder/Overli_Knus_PC.png" alt="Bildeshow" width="500" height="300">
+  <br>
+  <button id="byttKnapp">Bytt Bilde</button>
+
+  <script>
+    // Array med bilde-URLer
+    const bilder = ["../Bilder/Arne_And.jpg", "../Bilder/clouds.jpg", "../Bilder/mountain.jpg"];
+    let indeks = 0;
+
+    // Funksjon for å bytte bilde
+    function byttBilde() {
+      indeks = (indeks + 1) % bilder.length;
+      document.getElementById("bildeshow").src = bilder[indeks];
+    }
+
+    // Legg til event listener på knappen
+    document.getElementById("byttKnapp").addEventListener("click", byttBilde);
+  </script>
+</body>
+</html>

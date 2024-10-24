@@ -17,15 +17,15 @@ function myFunction() {
   document.getElementById("demo").innerHTML = text;
 }
 //En funksjon som regner ut antall brus i et selskap
-
-
 function myFunction2() {
   let antallBarn = Number(prompt("Antall barn:", ""));
   let antallVoksne = Number(prompt("Antall voksne:", ""));
   let brusPerGjest = Number(prompt("Antall pr. gjest:", ""));
   let antallBrus = (antallBarn + antallVoksne) * brusPerGjest;
 
-  // Hent tabellen
+  document.getElementById("demo2").innerHTML = text;
+
+  /*Hent tabellen
   let table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
 
   // Opprett en ny rad
@@ -40,5 +40,5 @@ function myFunction2() {
   cell1.innerHTML = antallBarn;
   cell2.innerHTML = antallVoksne;
   cell3.innerHTML = brusPerGjest;
-  cell4.innerHTML = antallBrus;
+  cell4.innerHTML = antallBrus; */
 }

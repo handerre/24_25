@@ -16,7 +16,8 @@ header {
 }
 h1, h2 {
     margin: 0 0 1em;
-}
+    text-align: center;
+  }
 
 /* Grid container */
 .grid-container {
@@ -39,7 +40,7 @@ h1, h2 {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(252, 249, 249, 0.1);
-    text-align: center;
+    
     
 }
 .section4 {
@@ -49,11 +50,17 @@ h1, h2 {
     box-shadow: 0 2px 5px rgba(252, 249, 249, 0.1);
     text-align: center;
     grid-area: 2 / 1 / span 2 / span 3;
-  
-
-
-    
+   
 }
+button {
+  color: rgba(134, 46, 212, 0.623);
+  font-size: xx-large;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(252, 249, 249, 0.1);
+  background-color: #c2f5c5;
+  border-style: groove;
+}
+
 /* Liste-stiler */
 ul {list-style-type: square;
     padding-left: 20px;
