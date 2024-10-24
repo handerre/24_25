@@ -11,4 +11,4 @@ function rollDice() {
 var diceRollResult = rollDice();
 
 // Print the result to the console
-console.log("The dice rolled: " + diceRollResult);
+console.log("Tilfeldig tall: " + diceRollResult)
