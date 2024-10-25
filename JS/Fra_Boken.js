@@ -13,8 +13,9 @@ function myFunction() {
     text = "Bruker kanselerte prompt.";
   } else {
     text = "Hei " + person + "! Hvordan har du det i dag?";
-  }
-  document.getElementById("demo").innerHTML = text;
+ }
+
+ document.getElementById("demo").innerHTML = text;
 }
 //En funksjon som regner ut antall brus i et selskap
 function myFunction2() {
