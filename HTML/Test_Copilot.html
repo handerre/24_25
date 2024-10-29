@@ -1,0 +1,159 @@
+<!--Lag en htmlside med tre grids som er lyseblå, body er lysegrønn og javascript hvor det regnes ut antall skritt gått når bruker taster inn dato og hvor mange kilometer hen har gått-->
+
+
+<!DOCTYPE html>
+<html lang="no"> <!-- Angir at dokumentet er en HTML5-fil og språket er norsk -->
+<head>
+    <meta charset="UTF-8"> <!-- Setter tegnsettet til UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Gjør siden responsiv -->
+    <title>Skritt Kalkulator</title> <!-- Tittel på siden -->
+    <style>
+        /* Setter bakgrunnsfargen til body til lysegrønn og definerer et grid layout */
+        body {
+            background-color: lightgreen;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            padding: 20px;
+        }
+        /* Setter bakgrunnsfargen til rutenettene til lyseblå og legger til padding og border */
+        .grid {
+            background-color: lightblue;
+            padding: 20px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid"> <!-- Første rutenett -->
+        <div class="form-container"> <!-- En container for skjemaet -->
+            <form id="stepForm"> <!-- Skjema for å beregne antall skritt -->
+                <label for="date">Date:</label> <!-- Etikett for datoinput -->
+                <input type="date" id="date" name="date" required> <!-- Inputfelt for dato -->
+                <label for="kilometers">Kilometers:</label> <!-- Etikett for kilometerinput -->
+                <input type="number" id="kilometers" name="kilometers" required> <!-- Inputfelt for antall kilometer -->
+                <button type="submit">Calculate Steps</button> <!-- Knapp for å sende inn skjemaet -->
+            </form>
+        </div>
+    </div>
+
+    <div class="grid"> <!-- Andre rutenett -->
+        <table id="resultsTable" style="border-collapse: collapse; width: 100%;">
+            <thead>
+                <tr>
+                    <th style="border: 1px solid white;">Dato</th>
+                    <th style="border: 1px solid white;">Utregning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rader for å samle inn 10 svar -->
+                <tr>
+                    <td id="displayDate1" style="border: 1px solid white;"></td>
+                    <td id="result1" style="border: 1px solid white;"></td>
+                </tr>
+                <tr>
+                    <td id="displayDate2" style="border: 1px solid white;"></td>
+                    <td id="result2" style="border: 1px solid white;"></td>
+                </tr>
+                <tr>
+                    <td id="displayDate3" style="border: 1px solid white;"></td>
+                    <td id="result3" style="border: 1px solid white;"></td>
+                </tr>
+                <tr>
+                    <td id="displayDate4" style="border: 1px solid white;"></td>
+                    <td id="result4" style="border: 1px solid white;"></td>
+                </tr>
+                <tr>
+                    <td id="displayDate5" style="border: 1px solid white;"></td>
+                    <td id="result5" style="border: 1px solid white;"></td>
+                </tr>
+                <tr>
+                    <td id="displayDate6" style="border: 1px solid white;"></td>
+                    <td id="result6" style="border: 1px solid white;"></td>
+                </tr>
+                <tr>
+                    <td id="displayDate7" style="border: 1px solid white;"></td>
+                    <td id="result7" style="border: 1px solid white;"></td>
+                </tr>
+                <tr>
+                    <td id="displayDate8" style="border: 1px solid white;"></td>
+                    <td id="result8" style="border: 1px solid white;"></td>
+                </tr>
+                <tr>
+                    <td id="displayDate9" style="border: 1px solid white;"></td>
+                    <td id="result9" style="border: 1px solid white;"></td>
+                </tr>
+                <tr>
+                    <td id="displayDate10" style="border: 1px solid white;"></td>
+                    <td id="result10" style="border: 1px solid white;"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="grid"> <!-- Tredje rutenett -->
+        <canvas id="stepsChart" width="400" height="200"></canvas> <!-- Canvas for grafen -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Inkluderer Chart.js biblioteket -->
+    <script>
+        // Legger til en hendelseslytter for skjemaets innsending
+        document.getElementById('stepForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Forhindrer standard innsending av skjemaet
+            const date = document.getElementById('date').value; // Henter verdien fra datoinputfeltet
+            const kilometers = document.getElementById('kilometers').value; // Henter verdien fra kilometerinputfeltet
+            const steps = kilometers * 1312.34; // Beregner antall skritt basert på gjennomsnittlig skrittlengde
+
+            // Finn neste ledige rad i tabellen
+            for (let i = 1; i <= 10; i++) {
+                if (document.getElementById(`displayDate${i}`).innerText === "") {
+                    document.getElementById(`displayDate${i}`).innerText = date; // Viser datoen i tabellen
+                    document.getElementById(`result${i}`).innerText = `Du har gått omtrent ${steps.toFixed(0)} skritt.`; // Viser resultatet i tabellen
+                    break;
+                }
+            }
+
+            // Oppdater grafen
+            updateChart();
+        });
+
+        // Funksjon for å oppdatere grafen
+        function updateChart() {
+            const dates = [];
+            const steps = [];
+
+            for (let i = 1; i <= 10; i++) {
+                const date = document.getElementById(`displayDate${i}`).innerText;
+                const stepText = document.getElementById(`result${i}`).innerText;
+                const stepCount = stepText.match(/\d+/); // Ekstraherer antall skritt fra teksten
+
+                if (date && stepCount) {
+                    dates.push(date);
+                    steps.push(parseInt(stepCount[0]));
+                }
+            }
+
+            const ctx = document.getElementById('stepsChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: 'Antall skritt',
+                        data: steps,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1,
+                        fill: false
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

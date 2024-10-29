@@ -1,0 +1,58 @@
+<!DOCTYPE html> <!-- Deklarerer dokumenttypen som HTML5 -->
+<html> <!-- Starter HTML-dokumentet -->
+    <head> <!-- Metainformasjon og stil for dokumentet -->
+        <title>Stadsnamn, differanse</title> <!-- Dokumentets tittel, vises i nettleserfanen -->
+        <meta charset="UTF-8"> <!-- Angir tegnsett som UTF-8 for å støtte ulike språk -->
+        <style>
+            /* CSS-stiler for dokumentet */
+            body {
+                background-color: rgb(91, 91, 105); /* Setter bakgrunnsfarge for hele siden */
+            }
+            #midtstilt {
+                background-color: white; /* Setter bakgrunnsfarge til hvit for div-elementet */
+                width: 600px; /* Setter bredden til 600 piksler */
+                margin: 0 auto; /* Sentrerer div-en horisontalt på siden */
+                padding: 25px; /* Legger til 25px polstring rundt innholdet i div-en */
+            }
+        </style>
+    </head>
+    <body> <!-- Dokumentets innhold starter her -->
+        <div id="midtstilt"> <!-- En div for midtstilt innhold med hvit bakgrunn -->
+            <h1>Stadsnamn, med brukarinput</h1> <!-- Tittel for siden -->
+            <p>
+                <input id="txt_stadEin" type="text" value="" placeholder="Stadsnamn nr. 1"> <!-- Tekstfelt for første stedsnavn -->
+                <input id="txt_stadTo" type="text" value="" placeholder="Stadsnamn nr. 2"> <!-- Tekstfelt for andre stedsnavn -->
+                <button id="knappReknUtDifferanse" type="button">Differanse i antall teikn</button> <!-- Knapp for å utløse funksjonen -->
+            </p>
+            <p id="output_stadsnamn"> <!-- Avsnitt for å vise resultatet av beregningen -->
+            </p>
+        </div> <!-- Avslutter midtstilt div -->
+
+        <!-- Kode -->
+        <script>
+            let output_stadsnamn = document.getElementById("output_stadsnamn"); // Refererer til elementet som viser resultatet
+            let knappReknUtDifferanse = document.getElementById("knappReknUtDifferanse"); // Refererer til knappen
+            
+            knappReknUtDifferanse.addEventListener("click", f_stadsnamnDifferanse); // Legger til en klikk-hendelse for knappen som kaller funksjonen f_stadsnamnDifferanse
+
+            function f_stadsnamnDifferanse() {
+                let stadsnamnEin = document.getElementById("txt_stadEin").value; // Henter verdi fra første input-felt
+                let stadsnamnTo = document.getElementById("txt_stadTo").value; // Henter verdi fra andre input-felt
+                
+                output_stadsnamn.innerHTML = "Ein stad heiter <span style='color:red;'>" + stadsnamnEin + "</span>, og ein annan heiter <span style='color:red;'>" + stadsnamnTo + "</span>. ";
+                // Viser de to stedsnavnene med rød tekst
+
+                let lengdeStadEin = stadsnamnEin.length; // Finner lengden på første stedsnavn
+                let lengdeStadTo = stadsnamnTo.length; // Finner lengden på andre stedsnavn
+                
+                output_stadsnamn.innerHTML += "Den første staden består av " + lengdeStadEin + " teikn, medan den andre består av " + lengdeStadTo + ". ";
+                // Legger til en tekst som viser antall tegn i hvert navn
+
+                let differanseStadsnamn = Math.abs(lengdeStadEin - lengdeStadTo); // Beregner forskjellen mellom lengdene som en absolutt verdi
+                console.log(differanseStadsnamn); // Logger differansen til konsollen for testing
+
+                output_stadsnamn.innerHTML += "Differansen mellom desse to er " + differanseStadsnamn + "."; // Viser differansen i antall tegn
+            }
+        </script>
+    </body>
+</html> <!-- Avslutter HTML-dokumentet -->
