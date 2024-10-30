@@ -1,59 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Definerer dokumenttypen som HTML5 -->
+<html lang="en"> <!-- Setter språk til engelsk -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tabell Eksempel</title>
+  <meta charset="UTF-8"> <!-- Angir tegnsett som UTF-8 for å støtte spesialtegn -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Gjør siden responsiv ved å sette bredden til enhetens bredde -->
+  <title>Tabell Eksempel</title> <!-- Tittelen som vises i nettleserens fane -->
 </head>
 <body>
 
   <!-- Tabellen der dataene skal legges inn -->
-  <table id="myTable" border="1">
-    <thead>
-      <tr>
-        <th>Antall barn</th>
-        <th>Antall voksne</th>
-        <th>Antall brus per gjest</th>
-        <th>Antall brus totalt</th>
+  <table id="myTable" border="1"> <!-- Lager en tabell med ID "myTable" og kantlinje -->
+    <thead> <!-- Tabellens overskrift -->
+      <tr> <!-- Rad for kolonneoverskrifter -->
+        <th>Antall barn</th> <!-- Kolonneoverskrift for antall barn -->
+        <th>Antall voksne</th> <!-- Kolonneoverskrift for antall voksne -->
+        <th>Antall brus per gjest</th> <!-- Kolonneoverskrift for antall brus per gjest -->
+        <th>Antall brus totalt</th> <!-- Kolonneoverskrift for antall brus totalt -->
       </tr>
     </thead>
     <tbody>
-      <!-- Nye rader blir lagt til her -->
+      <!-- Nye rader blir lagt til her av JavaScript-funksjonen -->
     </tbody>
   </table>
 
   <!-- En knapp for å trigge funksjonen -->
-  <button onclick="myFunction2()">Legg til verdier</button>
+  <button onclick="myFunction2()">Legg til verdier</button> <!-- Knapp som aktiverer funksjonen 'myFunction2' ved klikk -->
+
+  <!-- En knapp for å resette tabellen -->
+  <button onclick="resetTable()">Reset tabell</button> <!-- Knapp som aktiverer funksjonen 'resetTable' ved klikk -->
 
   <script>
     function myFunction2() {
-      let antallBarn = Number(prompt("Antall barn:", ""));
-      let antallVoksne = Number(prompt("Antall voksne:", ""));
-      let brusPerGjest = Number(prompt("Antall pr. gjest:", ""));
-      let antallBrus = (antallBarn + antallVoksne) * brusPerGjest;
+      // Brukeren blir bedt om å skrive inn antall barn, voksne, og brus per gjest
+      let antallBarn = Number(prompt("Antall barn:", "")); // Prompt for antall barn og konverterer til et tall
+      let antallVoksne = Number(prompt("Antall voksne:", "")); // Prompt for antall voksne og konverterer til et tall
+      let brusPerGjest = Number(prompt("Antall pr. gjest:", "")); // Prompt for brus per gjest og konverterer til et tall
+      let antallBrus = (antallBarn + antallVoksne) * brusPerGjest; // Beregner totalt antall brus basert på input
 
       // Sjekk om brukeren har skrevet gyldige verdier (ikke NaN)
       if (isNaN(antallBarn) || isNaN(antallVoksne) || isNaN(brusPerGjest)) {
-        alert("Vennligst skriv inn gyldige tall!");
-        return;
+        alert("Vennligst skriv inn gyldige tall!"); // Viser en advarsel dersom input ikke er gyldig
+        return; // Stopper funksjonen hvis input er ugyldig
       }
 
       // Hent tabellen
-      let table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+      let table = document.getElementById("myTable").getElementsByTagName('tbody')[0]; 
+      // Finner <tbody>-elementet i tabellen med ID "myTable" og lagrer det i variabelen 'table'
 
       // Opprett en ny rad
-      let newRow = table.insertRow();
+      let newRow = table.insertRow(); // Oppretter en ny rad på slutten av tabellen og lagrer den i 'newRow'
 
       // Opprett celler og fyll dem med verdier
-      let cell1 = newRow.insertCell(0);
-      let cell2 = newRow.insertCell(1);
-      let cell3 = newRow.insertCell(2);
-      let cell4 = newRow.insertCell(3);
+      let cell1 = newRow.insertCell(0); // Oppretter første celle i den nye raden
+      let cell2 = newRow.insertCell(1); // Oppretter andre celle i den nye raden
+      let cell3 = newRow.insertCell(2); // Oppretter tredje celle i den nye raden
+      let cell4 = newRow.insertCell(3); // Oppretter fjerde celle i den nye raden
 
-      cell1.innerHTML = antallBarn;
-      cell2.innerHTML = antallVoksne;
-      cell3.innerHTML = brusPerGjest;
-      cell4.innerHTML = antallBrus;
+      cell1.innerHTML = antallBarn; // Setter innholdet til første celle til verdien av 'antallBarn'
+      cell2.innerHTML = antallVoksne; // Setter innholdet til andre celle til verdien av 'antallVoksne'
+      cell3.innerHTML = brusPerGjest; // Setter innholdet til tredje celle til verdien av 'brusPerGjest'
+      cell4.innerHTML = antallBrus; // Setter innholdet til fjerde celle til verdien av 'antallBrus'
+    }
+
+    function resetTable() {
+      // Henter referansen til <tbody> i tabellen med ID "myTable"
+      let tableBody = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+
+      // Sletter alle rader i <tbody> for å resette tabellen
+      tableBody.innerHTML = ""; // Setter <tbody>-innholdet til tomt, som fjerner alle rader
     }
   </script>
 

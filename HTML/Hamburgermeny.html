@@ -1,0 +1,102 @@
+<!DOCTYPE html> <!-- Definerer dokumenttypen som HTML5 -->
+<html lang="en"> <!-- Setter språket til engelsk -->
+<head>
+  <meta charset="UTF-8"> <!-- Angir tegnsett som UTF-8 for støtte til spesialtegn -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Gjør siden responsiv ved å tilpasse bredden til enhetens bredde -->
+  <title>Hamburger Meny</title> <!-- Sidetittel som vises i nettleserens fane -->
+  <style>
+    /* Generelle stiler */
+    body {
+      font-family: Arial, sans-serif; /* Setter en enkel skrifttype for hele siden */
+      margin: 0; /* Fjerner standard margin */
+      padding: 0; /* Fjerner standard padding */
+    }
+
+    /* Meny stiler */
+    .navbar {
+      display: flex; /* Plasserer elementer horisontalt med flexbox */
+      justify-content: space-between; /* Fordeler plass mellom elementene */
+      align-items: center; /* Sentrerer elementene vertikalt */
+      background-color: #333; /* Setter en mørk bakgrunnsfarge */
+      padding: 10px 20px; /* Gir litt avstand rundt innholdet */
+      color: white; /* Setter tekstfargen til hvit */
+    }
+
+    .navbar h1 {
+      margin: 0; /* Fjerner margin fra overskriften */
+    }
+
+    /* Hamburger ikon */
+    .menu-icon {
+      display: none; /* Skjuler ikonet som standard */
+      font-size: 24px; /* Setter størrelse på ikonet */
+      cursor: pointer; /* Gir en peker når brukeren svever over ikonet */
+    }
+
+    /* Meny lenker */
+    .nav-links {
+      list-style: none; /* Fjerner standard punktmerker fra listeelementene */
+      display: flex; /* Viser lenkene horisontalt som standard */
+      gap: 20px; /* Legger til avstand mellom lenkene */
+    }
+
+    .nav-links li {
+      display: inline; /* Viser listeelementene horisontalt */
+    }
+
+    .nav-links a {
+      color: white; /* Setter tekstfargen til hvit */
+      text-decoration: none; /* Fjerner understreking av lenkene */
+    }
+
+    /* Skjuler menyen på små skjermer */
+    @media (max-width: 768px) { /* Gjelder bare for skjermbredder under 768px */
+      .nav-links {
+        display: none; /* Skjuler menyen som standard */
+        flex-direction: column; /* Viser lenkene vertikalt når de er synlige */
+        background-color: #333; /* Gir menyen en mørk bakgrunnsfarge */
+        position: absolute; /* Posisjonerer menyen over annet innhold */
+        top: 60px; /* Plasserer menyen rett under navbaren */
+        left: 0; /* Justerer menyen til venstre */
+        width: 100%; /* Setter bredden til 100% av vinduet */
+        padding: 10px 0; /* Gir avstand over og under lenkene */
+      }
+
+      .menu-icon {
+        display: block; /* Viser hamburgermenyikonet */
+      }
+
+      .nav-links.active {
+        display: flex; /* Viser menyen når den har klassen "active" */
+      }
+
+      .nav-links li {
+        text-align: center; /* Sentrerer lenkene horisontalt */
+        padding: 10px 0; /* Legger til avstand rundt hvert listeelement */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar med hamburgermeny -->
+  <div class="navbar">
+    <h1>Min Side</h1> <!-- Sidenavn som overskrift i navbaren -->
+    <span class="menu-icon" onclick="toggleMenu()">☰</span> <!-- Hamburgerikon med en funksjon som viser/skjuler menyen ved klikk -->
+    <ul class="nav-links" id="navLinks"> <!-- Menyliste for navigasjonslenkene -->
+      <li><a href="#home">Hjem</a></li> <!-- Lenke til hjemmeseksjonen -->
+      <li><a href="#about">Om Oss</a></li> <!-- Lenke til Om Oss-seksjonen -->
+      <li><a href="#services">Tjenester</a></li> <!-- Lenke til Tjenester-seksjonen -->
+      <li><a href="#contact">Kontakt</a></li> <!-- Lenke til Kontakt-seksjonen -->
+    </ul>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      // Toggler klassen "active" på menyen for å vise/skjule den
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>
