@@ -42,7 +42,6 @@ ul {
 ol {
     padding-left: 20px;
 }
-
 /* Responsiv design */
 @media (max-width: 768px) {
     .grid-container {

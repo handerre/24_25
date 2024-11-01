@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiplikasjon av to tall</title>
+    <script>
+        // Funksjon for å multiplisere to tall
+        function multiplyNumbers() {
+            // Henter input fra brukeren og konverterer til flyttall
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+
+            // Multipliserer tallene
+            let result = num1 * num2;
+
+            // Viser resultatet til brukeren
+            document.getElementById("result").innerText = "Resultatet er: " + result;
+        }
+    </script>
+</head>
+<body>
+    <!-- Inputfelt for det første tallet -->
+    <label for="num1">Skriv inn det første tallet:</label>
+    <input type="number" id="num1" step="any"><br><br>
+
+    <!-- Inputfelt for det andre tallet -->
+    <label for="num2">Skriv inn det andre tallet:</label>
+    <input type="number" id="num2" step="any"><br><br>
+
+    <!-- Knapp som kjører funksjonen når den trykkes -->
+    <button onclick="multiplyNumbers()">Beregn</button><br><br>
+
+    <!-- Element for å vise resultatet -->
+    <p id="result"></p>
+</body>
+</html>
