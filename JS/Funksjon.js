@@ -5,5 +5,5 @@ function minFunksjonBrus() {
     let brusPerGjest = Number(prompt("Antall pr. gjest:", ""));
     let antallBrus = (antallBarn + antallVoksne) * brusPerGjest;
   
-    document.getElementById("demo1").innerHTML = "Antall brus drukket " + antallBrus;
+    document.getElementById("Brus").innerHTML = "Antall brus drukket " + antallBrus;
 }
