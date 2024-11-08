@@ -40,14 +40,7 @@ function myFunction() {
 
 
 
-//En funksjon som regner ut antall brus i et selskap
-function myFunction2() {
-  let antallBarn = Number(prompt("Antall barn:", ""));
-  let antallVoksne = Number(prompt("Antall voksne:", ""));
-  let brusPerGjest = Number(prompt("Antall pr. gjest:", ""));
-  let antallBrus = (antallBarn + antallVoksne) * brusPerGjest;
 
-  document.getElementById("demo2").innerHTML = number;
 
   /*Hent tabellen
   let table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
