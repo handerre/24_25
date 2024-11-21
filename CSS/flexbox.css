@@ -20,10 +20,8 @@ body {
 
 /* Styling for hver flexbox item */
 .box {
-    background-color: #4CAF50;
     color: white;
     padding: 40px;
-    text-align: center;
     font-size: 24px;
     border-radius: 8px;
     flex: 1; /* Gjør at hver boks tar like mye plass */
@@ -41,3 +39,11 @@ body {
 .box3 {
     background-color: #FFC107;
 }
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse; 
+    padding: 10px;
+    min-width: 200px;
+    font-size: 16px;
+  }
+
