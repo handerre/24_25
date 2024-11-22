@@ -6,7 +6,7 @@
 //prompt("Hva heter du?")
 
 // En funksjon som tar imot tekstinput fra brukeren og skriver ut en melding på nettsiden.
-function myFunction() {
+function myFunction13() {
   // Deklarerer variabelen "text" som skal lagre meldingen.
   let text;
   
@@ -32,12 +32,16 @@ function myFunction() {
   }
 
   // Finner HTML-elementet med id "demo" og oppdaterer innholdet med verdien av text.
-  document.getElementById("demo").innerHTML = text;
-  
-  // Logger til konsollen at innholdet til elementet "demo" er oppdatert.
-  console.log("Elementet 'demo' er oppdatert med meldingen.");
+  let demoElement = document.getElementById("demo");
+  if (demoElement) {
+    demoElement.innerHTML = text;
+    
+    // Logger til konsollen at innholdet til elementet "demo" er oppdatert.
+    console.log("Elementet 'demo' er oppdatert med meldingen.");
+  } else {
+    console.error("Element med id 'demo' ble ikke funnet på siden.");
+  }
 }
-
 
 
 
