@@ -1,44 +1,44 @@
-<!DOCTYPE html>
-<html lang="no">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enkel Flexbox Layout</title>
-    <link rel="stylesheet" href="../CSS/flexbox.css">
+<!DOCTYPE html> <!-- Deklarerer dokumentet som en HTML5-fil. -->
+<html lang="no"> <!-- Starter HTML-dokumentet og spesifiserer at språket er norsk. -->
+<head> <!-- Starter hodet for metadata og koblinger til eksterne ressurser. -->
+    <meta charset="UTF-8"> <!-- Setter tegnkoding til UTF-8 for støtte av norske spesialtegn. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sørger for responsiv design tilpasset ulike enheter. -->
+    <title>Enkel Flexbox Layout</title> <!-- Setter tittelen på nettsiden. -->
+    <link rel="stylesheet" href="../CSS/flexbox.css"> <!-- Kobler til en ekstern CSS-fil for styling. -->
 </head>
-<body>
-    <div class="container">
-        <div class="box box1">
-            <li><a href="https://www.w3schools.com/">Visit W3Schools.com!</a></li>
-            <li><a href="Underside.html">En underside</a></li>
-            <li><a href="flexbox.html">En underside med flexbox</a></li>
-            <li><a href="../index.html">Tilbake til index</a></li>
-        </ul>
-    </div>
-        <div class="box box2">
-             <table>
-                <tr>
-                    <th>Dato</th>
-                    <th>Status før</th>
-                    <th>Status nå</th>
-                    <th>Hvor søkte jeg hjelp</th>
-                </tr>
-                <tr>
-                    <td>20.11.24</td>
-                    <td>Ingenting av det på nå</td>
-                    <td>Nå har jeg laget laget underside, skrevert logg, lagt til skisse </td>
-                    <td>W3schools, person x, ++</td>
-                </tr>
-                <tr>
-                    <td>22.11.24</td>
-                    <td>Ingenting av det på nå</td>
-                    <td>Nå har jeg laget tabell i den gridden jeg ville, på siden logg</td>
-                    <td>W3schools, person y, ++</td>
-                </tr>
-                </table> 
-        </div>
-        <div class="box box3">Flexbox 3</div>
-    </div>
-
-</body>
-</html>
+<body> <!-- Starter kroppsseksjonen der hovedinnholdet ligger. -->
+    <div class="container"> <!-- Oppretter en container for flexbox-layoutet. -->
+        <div class="box box1"> <!-- Første boks i flexbox-oppsettet. -->
+            <ul> <!-- Starter en uordnet liste. -->
+                <li><a href="https://www.w3schools.com/">Visit W3Schools.com!</a></li> <!-- Lenke til W3Schools. -->
+                <li><a href="Underside.html">En underside</a></li> <!-- Lenke til en lokal underside. -->
+                <li><a href="flexbox.html">En underside med flexbox</a></li> <!-- Lenke til en underside om flexbox. -->
+                <li><a href="../index.html">Tilbake til index</a></li> <!-- Lenke tilbake til startsiden (index). -->
+            </ul> <!-- Lukker listen. -->
+        </div> <!-- Lukker den første boksen. -->
+        <div class="box box2"> <!-- Andre boks i flexbox-oppsettet. -->
+             <table> <!-- Oppretter en tabell for å strukturere loggdata. -->
+                <tr> <!-- Første rad for overskrifter i tabellen. -->
+                    <th>Dato</th> <!-- Kolonneoverskrift for datoer. -->
+                    <th>Status før</th> <!-- Kolonneoverskrift for status før oppgaven. -->
+                    <th>Status nå</th> <!-- Kolonneoverskrift for status etter oppgaven. -->
+                    <th>Hvor søkte jeg hjelp</th> <!-- Kolonneoverskrift for hjelpekilder. -->
+                </tr> <!-- Slutter første rad. -->
+                <tr> <!-- Oppretter en rad med data. -->
+                    <td>20.11.24</td> <!-- Dato for loggføring. -->
+                    <td>Ingenting av det på nå</td> <!-- Status før oppgaven ble påbegynt. -->
+                    <td>Nå har jeg laget underside, skrevet logg, lagt til skisse</td> <!-- Status etter oppgaven ble utført. -->
+                    <td>W3schools, person x, ++</td> <!-- Hjelpekilder brukt under arbeidet. -->
+                </tr> <!-- Slutter rad med data. -->
+                <tr> <!-- Oppretter en ny rad med data. -->
+                    <td>22.11.24</td> <!-- Ny loggføringsdato. -->
+                    <td>Ingenting av det på nå</td> <!-- Status før oppgaven ble påbegynt. -->
+                    <td>Nå har jeg laget tabell i den gridden jeg ville, på siden logg</td> <!-- Status etter oppgaven ble utført. -->
+                    <td>W3schools, person y, ++</td> <!-- Nye hjelpekilder brukt. -->
+                </tr> <!-- Slutter ny rad med data. -->
+            </table> <!-- Lukker tabellen. -->
+        </div> <!-- Lukker den andre boksen. -->
+        <div class="box box3">Flexbox 3</div> <!-- Tredje boks i flexbox-oppsettet, med tekstinnhold "Flexbox 3". -->
+    </div> <!-- Lukker containeren for flexbox-layoutet. -->
+</body> <!-- Lukker kroppsseksjonen. -->
+</html> <!-- Lukker HTML-dokumentet. -->
