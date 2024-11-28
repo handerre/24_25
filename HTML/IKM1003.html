@@ -1,0 +1,258 @@
+Se plagiatrapport: se rapport
+
+HTML koden: 
+
+<!--Dokument type, sørger for at siden blir vist riktig-->
+
+<!DOCTYPE html>
+
+<!--Norsk språk-->
+
+<html lang="no">
+
+<!--Innenfor head skriver vi ned metadata-->
+
+<head>
+
+    <!-- Definerer karakterer som egner seg til de fleste språk rundt omkring i verden-->
+
+    <meta charset="UTF-8">
+
+    <!--For at nettsiden skal utforme seg riktig på forskjellige enheter-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Tittel-->
+
+    <title>Skisse på nettside</title>
+
+    <!--Link til CSS-->
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <!--Lager meny knapp-->
+
+        <button class="menu-button">Meny</button>
+
+    </header>
+
+    <main>
+
+        <!--Lager en class der vi legger inn en overskrift og image-placeholder-->
+
+        <section class="content">
+
+            <h1>Velg din overskrift!</h1>
+
+            <div class="image-placeholder">
+
+                I denne boksen kan man plassere to bilder som er 500*300 px hver.
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!--For bunnen av nettsiden lager vi en "footer" der vi har en digital klokke-->
+
+    <footer>
+
+        <p>
+
+            <span id="datetime"></span>
+
+        </p>
+
+        <p><b>Copyright ©</b></p>
+
+    </footer>
+
+    <!--Link til javascript-->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
+ 
+
+
+CSS koden:
+
+/* Riktig fargekode som oppgitt i oppgaven */
+
+body {
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background-image: linear-gradient(to right, rgb(230, 210, 173), #556970);
+
+    color: #000;
+
+}
+
+
+ 
+
+/* Meny knappen */
+
+header {
+
+    padding-top: 15px;
+
+    padding-left: 1700px;
+
+}
+
+
+ 
+
+.menu-button {
+
+    background-color: #4CAF50;
+
+    border: none;
+
+    color: white;
+
+    padding: 15px 20px;
+
+    font-size: 16px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+}
+
+
+ 
+
+/* Hovedinnhold */
+
+main {
+
+    padding: 20px;
+
+}
+
+
+ 
+
+.content h1 {
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+
+}
+
+
+ 
+
+.image-placeholder {
+
+    width: 1100px;
+
+    height: 700px;
+
+    margin: 20px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 2px dashed #000;
+
+    color: #000;
+
+    font-size: 18px;
+
+    text-align: center;
+
+}
+
+
+ 
+
+/* Footer stil */
+
+footer {
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+}
+
+ 
+
+
+JavaScript koden:
+
+// For å hente elementet som skal vise tid
+
+const datetimeElement = document.getElementById("datetime");
+
+
+ 
+
+// "Function" slik at klokkeslettet oppdaterer seg
+
+function updateClock() {
+
+    const now = new Date();
+
+
+ 
+
+    // Formater dato og tid for korrekt tid (sentraleuropa).
+
+    const options = {
+
+        hour: '2-digit',
+
+        minute: '2-digit',
+
+        second: '2-digit',
+
+        timeZone: 'Europe/Paris', // tidssone
+
+    };
+
+
+ 
+
+    const formattedTime = now.toLocaleTimeString("no-NO", options);
+
+    datetimeElement.textContent = formattedTime;
+
+}
+
+
+ 
+
+// Oppdater tid hver sekund
+
+setInterval(updateClock, 1000);
+
+
+ 
+
+// Kjør "function" umiddelbart for å vise klokken med en gang
+
+updateClock();
