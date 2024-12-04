@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktivitetslogger med Tabell</title>
+    <style>
+        /* Enkel styling for nettsiden */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            margin: 5px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aktivitetslogger</h1>
+    <!-- Knapper for å legge til data og vise data -->
+    <button id="leggTilKnapp">Legg til aktivitet</button>
+    <button id="visListeKnapp">Vis logg</button>
+    <div class="output" id="output"></div>
+
+    <script>
+        // Array for å lagre aktivitetsdata
+        let aktivitetsLogg = [];
+
+        // Funksjon for å legge til en ny aktivitet
+        function leggTilAktivitet() {
+            // Ber brukeren om å skrive inn en dato
+            let dato = prompt("Skriv inn dato for aktiviteten (f.eks. 2024-12-04):");
+            
+            // Ber brukeren om å oppgi kilden
+            let kilde = prompt("Skriv inn kilden du har brukt (f.eks. Bok, Nettsted):");
+            
+            // Ber brukeren beskrive hva de har gjort
+            let beskrivelse = prompt("Beskriv hva du har gjort i denne timen:");
+
+            // Sjekker at alle felt er fylt ut
+            if (dato && dato.trim() !== "" && kilde && kilde.trim() !== "" && beskrivelse && beskrivelse.trim() !== "") {
+                // Legger dataene som et objekt i aktivitetsloggen
+                aktivitetsLogg.push({
+                    dato: dato.trim(),
+                    kilde: kilde.trim(),
+                    beskrivelse: beskrivelse.trim()
+                });
+
+                // Viser en bekreftelsesmelding til brukeren
+                document.getElementById("output").innerHTML = `<p>Aktivitet for ${dato} er lagt til!</p>`;
+            } else {
+                // Hvis noen felt ikke er fylt ut, vis en feilmelding
+                document.getElementById("output").innerHTML = "<p>Alle feltene må fylles ut. Vennligst prøv igjen.</p>";
+            }
+        }
+
+        // Funksjon for å vise aktivitetsloggen i en tabell
+        function visLogg() {
+            // Sjekker om loggen er tom
+            if (aktivitetsLogg.length === 0) {
+                // Viser en melding om at loggen er tom
+                document.getElementById("output").innerHTML = "<p>Loggen er tom. Legg til noen aktiviteter først!</p>";
+            } else {
+                // Start tabellen med overskrifter
+                let loggHTML = `
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dato</th>
+                                <th>Kilde</th>
+                                <th>Beskrivelse</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+
+                // Legg til hver aktivitet som en rad i tabellen
+                for (let i = 0; i < aktivitetsLogg.length; i++) {
+                    let aktivitet = aktivitetsLogg[i];
+                    loggHTML += `
+                        <tr>
+                            <td>${aktivitet.dato}</td>
+                            <td>${aktivitet.kilde}</td>
+                            <td>${aktivitet.beskrivelse}</td>
+                        </tr>
+                    `;
+                }
+
+                // Avslutt tabellen
+                loggHTML += `
+                        </tbody>
+                    </table>
+                `;
+
+                // Viser tabellen i output-diven
+                document.getElementById("output").innerHTML = loggHTML;
+            }
+        }
+
+        // Knytter knappene til funksjonene
+        document.getElementById("leggTilKnapp").addEventListener("click", leggTilAktivitet); // Kjører leggTilAktivitet når knappen klikkes
+        document.getElementById("visListeKnapp").addEventListener("click", visLogg);       // Kjører visLogg når knappen klikkes
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topbar Navigation</title>
+    <style>
+        /* Enkel stil for demonstrasjon */
+        #topbar {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #topbar-pagenav {
+            background-color: #444;
+            color: white;
+            padding: 10px;
+            visibility: hidden; /* Skjult som standard */
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 200px;
+        }
+
+        /* Klassen for å skjule navigasjonsmenyen */
+        .nodisplay2 {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- Topbar som fungerer som navigasjon -->
+    <div id="topbar">
+        Topbar - Hover to show menu
+    </div>
+    <!-- Navigasjonsmeny som vises under Topbar -->
+    <div id="topbar-pagenav" class="nodisplay2">
+        <ul>
+            <li>Menu Item 1</li>
+            <li>Menu Item 2</li>
+            <li>Menu Item 3</li>
+        </ul>
+    </div>
+
+    <script>
+        // JavaScript-kode som styrer adferden til Topbar og PageNav
+        document.addEventListener('DOMContentLoaded', () => {
+            const topbar = document.getElementById('topbar');
+            const pagenav = document.getElementById('topbar-pagenav');
+            let timeout2;
+
+            // Når musen går over 'topbar'
+            topbar.addEventListener('mouseenter', () => {
+                clearTimeout(timeout2); // Avbryt eventuell skjuling
+                pagenav.classList.remove('nodisplay2'); // Vis menyen
+                pagenav.style.visibility = 'visible'; // Sørg for at menyen er synlig
+            });
+
+            // Når musen forlater 'topbar'
+            topbar.addEventListener('mouseleave', () => {
+                timeout2 = setTimeout(() => {
+                    pagenav.classList.add('nodisplay2'); // Skjul menyen
+                    pagenav.style.visibility = 'hidden'; // Sett synlighet til skjult
+                }, 200);
+            });
+
+            // Når musen går over 'pagenav'
+            pagenav.addEventListener('mouseenter', () => {
+                clearTimeout(timeout2); // Avbryt eventuell skjuling
+                pagenav.classList.remove('nodisplay2'); // Hold menyen synlig
+                pagenav.style.visibility = 'visible'; // Sørg for at menyen er synlig
+            });
+
+            // Når musen forlater 'pagenav'
+            pagenav.addEventListener('mouseleave', () => {
+                timeout2 = setTimeout(() => {
+                    pagenav.classList.add('nodisplay2'); // Skjul menyen
+                    pagenav.style.visibility = 'hidden'; // Sett synlighet til skjult
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>

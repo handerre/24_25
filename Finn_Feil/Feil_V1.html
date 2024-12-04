@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navneliste</title>
+    <style>
+        /* Enkel styling for utseendet */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .output {
+            margin-top: 20px;
+        }
+        button {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Navneliste</h1>
+
+    <!-- Inputfelt for å skrive inn navn -->
+    <label for="navnInput">Skriv inn et navn:</label>
+    <input type="text" id="navnInput" placeholder="F.eks. Ola Nordmann">
+
+    <!-- Knapper for funksjonalitet -->
+    <button id="leggTilKnapp">Legg til navn</button>
+    <button id="visListeKnapp">Vis listen</button>
+    <button id="avsluttKnapp">Avslutt</button>
+
+    <!-- Div for å vise meldinger og resultat -->
+    <div class="output" id="output"></div>
+
+    <script>
+        // Variabel for å ....?
+        let navnListe = [];
+
+        // Funksjon for å .....?
+        function leggTilNavn() {
+            // Hent verdien fra inputfeltet og fjern ekstra mellomrom
+            let navnInput = document.getElementById("navnInput").value.trim();
+             (navnInput !== "") {
+                // Hvis navnet ikke er tomt, legg det til i listen
+                navnListe.push(navnInput);
+
+                // Vis en melding om at navnet er lagt til
+                document.getElementById("output").innerHTML = `<p>${navnInput} er lagt til i listen.</p>`;
+
+                // Tøm ....?
+                document.getElementById("navnInput").value = "";
+            } else {
+                // Hvis inputfeltet er tomt, vis en ????
+                document.getElementById("output").innerHTML = "<p>Vennligst skriv inn et gyldig navn.</p>";
+            }
+        }
+
+        // Funksjon for å vise ....?
+        function visListe() {
+            if (navnListe.length > 0) {
+                // Hvis listen ikke er tom, bygg en HTML-struktur med navnene
+                let listeHTML = "<h2>Navn i listen:</h2><ul>";
+                 (let i = 0; i < navnListe.length; i++) {
+                    // Legg til hvert navn som en listepunkt
+                    listeHTML += `<li>${navnListe[i]}</li>`;
+                }
+                listeHTML += "</ul>";
+
+                // Vis listen i ???
+                document.getElementById("output").innerHTML = listeHTML;
+            } else {
+                // Hvis listen er tom, vis en ?????
+                document.getElementById("output").innerHTML = "<p>Listen er tom.</p>";
+            }
+        }
+
+        // Funksjon for å avslutte programmet
+        avslutt() {
+            // Vis en melding om at programmet er avsluttet
+            document.getElementById("output").innerHTML = "<p>Programmet er avsluttet. Takk for bruk!</p>";
+
+            // Deaktiver alle knappene
+            document.getElementById("leggTilKnapp").disabled = true;
+            document.getElementById("visListeKnapp").disabled = true;
+            document.getElementById("avsluttKnapp").disabled = true;
+        }
+
+        // Legg til Event Listeners for knappene
+        document.getElementById("leggTilKnapp").addEventListener("click", leggTilNavn); // Kjør leggTilNavn når "Legg til navn"-knappen klikkes
+        document.getElementById("visListeKnapp").addEventListener("click", visListe);   // Kjør visListe når "Vis listen"-knappen klikkes
+        document.getElementById("avsluttKnapp").addEventListener("click", avslutt);    // Kjør avslutt når "Avslutt"-knappen klikkes
+    </script>
+</body>
+</html>
