@@ -33,8 +33,7 @@ function myFunction13() {
 
   // Finner HTML-elementet med id "demo" og oppdaterer innholdet med verdien av text.
   let demoElement = document.getElementById("demo");
-  if (demoElement) {
-    demoElement.innerHTML = text;
+  if (demoElement) { demoElement.innerHTML = text;
     
     // Logger til konsollen at innholdet til elementet "demo" er oppdatert.
     console.log("Elementet 'demo' er oppdatert med meldingen.");
@@ -61,5 +60,5 @@ function myFunction13() {
   cell1.innerHTML = antallBarn;
   cell2.innerHTML = antallVoksne;
   cell3.innerHTML = brusPerGjest;
-  cell4.innerHTML = antallBrus; */
-}
+  cell4.innerHTML = antallBrus; 
+}*/
