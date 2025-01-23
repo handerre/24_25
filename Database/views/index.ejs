@@ -6,11 +6,16 @@
     <title>Brukere</title>
 </head>
 <body>
+    <li><a href="index2.ejs">Biler</a></li> <!-- Link til input og tabell-lagring -->
+
     <h1>Liste over brukere</h1>
     <ul>
         <% users.forEach(user => { %>
             <li><%= user.name %> - <%= user.email %></li>
         <% }) %>
     </ul>
+
+    
+    
 </body>
 </html>
