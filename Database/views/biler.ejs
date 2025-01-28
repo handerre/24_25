@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+</head>
+<body>
+    <h1><%= title %></h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Bil ID</th>
+                <th>Merke</th>
+                <th>Modell</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <% biler.forEach(bil => { %>
+                <tr>
+                    <td><%= bil.Registreringsnummer %></td>
+                    <td><%= bil.Merke %></td>
+                    <td><%= bil.Modell %></td>
+                    
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <a href="/">Tilbake til hovedsiden</a>
+</body>
+</html>

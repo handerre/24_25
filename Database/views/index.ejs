@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brukere</title>
+    <title>Brukere og Biler</title>
 </head>
 <body>
-    <li><a href="index2.ejs">Biler</a></li> <!-- Link til input og tabell-lagring -->
+<h1>Her er en oversikt over 2 databaser</h1>
 
-    <h1>Liste over brukere</h1>
     <ul>
-        <% users.forEach(user => { %>
-            <li><%= user.name %> - <%= user.email %></li>
-        <% }) %>
-    </ul>
+        
+            <li><a href="/biler">Se biloversikt</a></li>
 
-    
-    
+            <li><a href="/users">Se users</a></li>
+        </ul>
+      
 </body>
 </html>
